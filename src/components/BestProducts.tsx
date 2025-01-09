@@ -20,7 +20,7 @@ interface ApiProduct {
   description?: string;
   desc?: string;
   rating?: number;
-  price?: string;
+  price?: string | number;
 }
 
 const BestProducts: React.FC = () => {

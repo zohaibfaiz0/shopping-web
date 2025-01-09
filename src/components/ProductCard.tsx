@@ -7,7 +7,7 @@ import { useCart } from '../contexts/CartContext'; // Adjusted the import path
 interface ProductCardProps {
     img: string;
     title: string;
-    price: string;
+    price: string ;
     desc: string;
     rating: number;
 }

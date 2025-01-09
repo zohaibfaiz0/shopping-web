@@ -24,7 +24,8 @@ const HeaderMain = () => {
         <input
     type="text"
     placeholder="Enter a product name..."
-    className="border-gray-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent border p-2 rounded-lg w-full"
+    className="border-gray-3git push -u origin main
+00 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent border p-2 rounded-lg w-full"
 />
           <BsSearch className='absolute top-0 right-0 mr-3 mt-3 hover:text-accent text-gray-400' size={20} />
         </div>
