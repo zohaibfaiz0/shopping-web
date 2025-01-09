@@ -8,7 +8,7 @@ interface Product {
   title: string;
   desc: string;
   rating: number;
-  price: string;
+  price: string | number;
 }
 
 interface ApiProduct {
