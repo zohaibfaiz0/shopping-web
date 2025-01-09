@@ -2,21 +2,21 @@
 import React from 'react';
 import Image from 'next/image';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { useCart } from '../contexts/CartContext'; // Adjusted the import path
+import { useCart } from '../contexts/CartContext'; // Adjust the import path as necessary
 
 interface ProductCardProps {
     img: string;
     title: string;
-    price: string ;
+    price: string | number; // Price can be string or number
     desc: string;
     rating: number;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ img, title, desc, price, rating }) => {
     const { addToCart } = useCart();
-    
-    // Remove '$' if present and convert to number
-    const numericPrice = parseFloat(price.replace('$', ''));
+
+    // Convert price to a number
+    const numericPrice = typeof price === 'string' ? parseFloat(price.replace('$', '')) : price;
 
     const generateStars = (rating: number) => {
         const stars = [];
@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ img, title, desc, price, rati
 
     const handleAddToCart = () => {
         const product = {
-            id: Date.now(), // Unique ID for this product (you can replace with actual unique ID)
+            id: Date.now(), // Unique ID for this product (as a number)
             name: title,
             price: numericPrice,
             image: img,

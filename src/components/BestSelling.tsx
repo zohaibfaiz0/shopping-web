@@ -7,7 +7,7 @@ import { useCart } from '../contexts/CartContext'; // Adjusted the import path
 interface BestSellingProps {
     img: string;
     title: string;
-    price: string;
+    price: string | number; // Price can be string or number
     desc: string;
     rating: number;
 }
@@ -15,8 +15,8 @@ interface BestSellingProps {
 const BestSelling: React.FC<BestSellingProps> = ({ img, title, desc, price, rating }) => {
     const { addToCart } = useCart();
 
-    // Remove '$' if present and convert to number
-    const numericPrice = parseFloat(price.replace('$', ''));
+    // Convert price to a number
+    const numericPrice = typeof price === 'string' ? parseFloat(price.replace('$', '')) : price;
 
     const generateStars = (rating: number) => {
         const stars = [];
